@@ -1,0 +1,36 @@
+{
+  "name": "cattime",
+  "version": "0.1.0",
+  "description": "MERN app for securely displaying cats!",
+  "main": "server.js",
+  "repository": "https://github.com/michaellobato/CatTime.git",
+  "author": "Michael Lobato <lobato.michaeljr@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext .js --ext .jsx .",
+    "mongo-mac": "mkdir mongo-db; mongod --dbpath mongo-db",
+    "mongo-win": "md mongo-db & \"C:/Program Files/MongoDb/Server/4.2/bin/mongod.exe\" --dbpath mongo-db",
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "devDependencies": {
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "nodemon": "2.0.2"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.19.0",
+    "concurrently": "5.1.0",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.15",
+    "mongoose": "5.8.11",
+    "passport": "0.4.1",
+    "passport-jwt": "4.0.0"
+  }
+}
