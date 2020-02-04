@@ -23,8 +23,9 @@ I have a gross little script to start the db since I don't have it running as a 
 1. `yarn start`
 
 ## Concessions/Future Improvements
-Things that I would do differently if I took more time to work on this
+Things that I would do differently if I took more time to work on this:
 1. Containerize for local and/or deployment
+1. Tests of any and all kinds...
 1. For something small like this I would use something lighter than React such as preact, but I am familiar with React and Preact doesn't currently have support for hooks.
 1. Don't use gross scripts for running mongo
 1. Use prettier + eslint
