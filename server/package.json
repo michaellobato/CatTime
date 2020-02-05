@@ -10,8 +10,8 @@
     "lint": "eslint --ext .js --ext .jsx .",
     "mongo-mac": "mkdir mongo-db; mongod --dbpath mongo-db",
     "mongo-win": "md mongo-db & \"C:/Program Files/MongoDb/Server/4.2/bin/mongod.exe\" --dbpath mongo-db",
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "devDependencies": {
     "eslint": "6.1.0",
@@ -21,6 +21,9 @@
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "1.7.0",
     "nodemon": "2.0.2"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-airbnb"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",

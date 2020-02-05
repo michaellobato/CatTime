@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const api = require('./api');
+const keys = require('./config/keys');
 
 const app = express();
 
@@ -12,18 +15,20 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// TODO: obviously this is not the way to do this...
-// DB Config
-const url = 'mongodb://localhost:27017';
-
 // Connect to MongoDB
 mongoose
   .connect(
-    url,
+    keys.dbUrl, // TODO: obviously this is not the way to do this...
     { useNewUrlParser: true, useUnifiedTopology: true },
   )
   .then(() => console.log('MongoDB successfully connected'))
   .catch((err) => console.log(err));
+
+app.use(passport.initialize());
+
+require('./config/passport')(passport);
+
+app.use('/api', api);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
