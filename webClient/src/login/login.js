@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
 import useApiRequest, { FETCHING, SUCCESS, ERROR } from "../customHooks/useApiRequest";
+import setAuthenticated from '../utils/setAuthToken';
 
 // TODO: lots of accessability concerns in here...
 export default ({history}) => {
@@ -25,6 +26,7 @@ export default ({history}) => {
   }
 
   if(status === SUCCESS) {
+    setAuthenticated();
     history.push('/home');
   }
 

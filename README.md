@@ -14,13 +14,13 @@ MERN app for securely displaying cats!
 ## Running Locally
 ### Start Mongo
 I have a gross little script to start the db since I don't have it running as a server and it is not spun up via a container. obviously this is not ideal. If you are on windows you will need to change the path of the `mongo-win` to match your own instillation location. You may need to add the `bin` to your environment variable path as well. Alternatively you can modify the `server/config/keys.js` "dbUrl" to point to your running mongo.
-1. run `yarn run mongo-win` or `yarn run mongo-mac`
+1. Navigate to the `server` director and run `yarn run mongo-win` or `yarn run mongo-mac`
 
-### For Development
-1. `yarn run dev`
+### Server
+1. Navigate to the `server` directory and run `yarn run dev`
 
-### Local testing (not development)
-1. `yarn run start`
+### Client
+1. Navigate to the `webClient` directory and run `yarn run start`
 
 ## Concessions/Future Improvements
 Things that I would do differently if I took more time to work on this:
