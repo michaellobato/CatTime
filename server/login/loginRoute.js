@@ -48,10 +48,7 @@ router.post('/', async (req, res) => {
       );
 
       // TODO: should use something like passport-jwt-cookiecombo to store in httponly cookie
-      return res.json({
-        success: true,
-        token: `Bearer ${token}`, // TODO: should encrypted further
-      });
+      return res.cookie('authentication-token', token, {httpOnly: true}).end();
     }
   } catch (error) {
     // TODO: better error handling

@@ -47,7 +47,7 @@ router.put('/', async (req, res) => {
     const hash = await bcrypt.hash(password, salt);
     newUser.password = hash;
     await newUser.save();
-    return res.end();
+    return res.end(); // TODO: extract out authentication and return token like login
   } catch (error) {
     return res.status(500).json({ error: 'something went wrong' });
   }

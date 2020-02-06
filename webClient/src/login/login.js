@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import useApiRequest, { FETCHING, SUCCESS, ERROR } from "../customHooks/useApiRequest";
 
-export default () => {
+// TODO: lots of accessability concerns in here...
+export default ({history}) => {
   const [email, updateEmail] = useState('');
   const [password, updatePassword] = useState('');
   const [errors, updateErrors] = useState({});
@@ -21,6 +22,10 @@ export default () => {
 
   if (status === ERROR && errors !== response) {
     updateErrors(response);
+  }
+
+  if(status === SUCCESS) {
+    history.push('/home');
   }
 
   return (
@@ -75,6 +80,7 @@ export default () => {
               <span className="red-text">{errors.password}</span>
             </div>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <div className="red-text">{errors.error}</div>
               <button
                 style={{
                   'min-width': "150px",

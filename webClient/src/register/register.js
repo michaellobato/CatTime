@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import useApiRequest, { FETCHING, SUCCESS, ERROR } from "../customHooks/useApiRequest";
 
-export default ({history}) => {
+// TODO: lots of acceability concerns in here...
+export default () => {
   const [email, updateEmail] = useState('');
   const [password, updatePassword] = useState('');
   const [password2, updatePassword2] = useState('');
@@ -38,10 +39,12 @@ export default ({history}) => {
         <b>Register</b> below
         </h4>
         <p className="grey-text text-darken-1">
-        Already have an account? <Link to="/login">Log in</Link>
+          {status === SUCCESS && 'Successfully Registered. Return to '}
+          {status !== SUCCESS && 'Already have an account?'} 
+          <Link to="/login">Log in</Link>
         </p>
       </div>
-      <form noValidate onSubmit={(e) => {
+      {status !== SUCCESS && <form noValidate onSubmit={(e) => {
         e.preventDefault();
         // TODO: some client side validation would be good
         if(status !== FETCHING)
@@ -93,6 +96,7 @@ export default ({history}) => {
           <span className="red-text">{errors.password2}</span>
         </div>
         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+          <div className="red-text">{errors.error}</div>
           <button
             style={{
             width: "150px",
@@ -107,7 +111,7 @@ export default ({history}) => {
             {status === FETCHING ? 'Registering' : 'Sign up'}
           </button>
         </div>
-      </form>
+      </form>}
       </div>
     </div>
     </div>

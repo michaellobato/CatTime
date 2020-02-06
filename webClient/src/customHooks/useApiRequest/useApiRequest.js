@@ -11,10 +11,7 @@ const useApiRequest = (endpoint, { verb = 'get', params = {} } = {}) => {
         dispatch(fetching());
         try {
             const response = await axios[verb](endpoint, {
-                ...params,
-                headers: {
-                    'Access-Control-Allow-Origin': 'localhost:5000', // TODO: obviously don't hardcode this
-                },
+                ...params
             });
             dispatch(success(response));
         } catch (e) {   
