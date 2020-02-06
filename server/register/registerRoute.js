@@ -7,12 +7,13 @@ const validateRegisterInput = require('./registerUtils');
 
 const User = require('../user/UserModel');
 
-// @route POST api/users/register
+// @route PUT api/users/register
 // @desc Register user
 // @access Public
-router.post('/', async (req, res) => {
+router.put('/', async (req, res) => {
   // TODO: move this controller logic out of the routing
   // TODO: Better input error handling
+  // TODO: this function is not idempotent...
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {

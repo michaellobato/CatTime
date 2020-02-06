@@ -30,6 +30,9 @@ Things that I would do differently if I took more time to work on this:
 1. Don't use gross scripts for running mongo
 1. Don't use create-react-app or eject.
 1. Use prettier + eslint
-1. Use Babel?
+1. Use Babel for the service so I can use imports and other es6+ features? (create react app uses it so the client has it)
 1. API documentation.
-1. create root level package.json and control certain things globally like linting
+1. create root level package.json and control certain things globally like linting.
+1. use https and http2.
+1. Don't use inline styles anywhere...
+1. Better loading user experience.
