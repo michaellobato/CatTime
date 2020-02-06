@@ -1,19 +1,19 @@
 # CatTime
 MERN app for securely displaying cats!
 
-## Instillation
+## Installation
 ### Tools Needed
 1. [node.js](https://nodejs.org/en/download/)
 1. [yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 1. [mongodb](https://docs.mongodb.com/manual/installation/)
 
-### Instillation instructions
+### Installation instructions
 1. Clone the repo
 2. run `yarn install --frozen-lockfile`
 
 ## Running Locally
 ### Start Mongo
-I have a gross little script to start the db since I don't have it running as a server and it is not spun up via a container. obviously this is not ideal. If you are on windows you will need to change the path of the `mongo-win` to match your own instillation location. You may need to add the `bin` to your environment variable path as well. Alternatively you can modify the `server/config/keys.js` "dbUrl" to point to your running mongo.
+I have a gross little script to start the db since I don't have it running as a server and it is not spun up via a container. obviously this is not ideal. If you are on windows you will need to change the path of the `mongo-win` to match your own installation location. You may need to add the `bin` to your environment variable path as well. Alternatively you can modify the `server/config/keys.js` "dbUrl" to point to your running mongo.
 1. Navigate to the `server` director and run `yarn run mongo-win` or `yarn run mongo-mac`
 
 ### Server
