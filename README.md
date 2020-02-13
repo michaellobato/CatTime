@@ -1,6 +1,10 @@
 # CatTime
 MERN app for securely displaying cats!
 
+This was a coding exercise where the goal was to create a javascript based full stack solution complete with secure login/registration and displaying of some sensative information limited on a per user basis. In total I have worked on this project for about 12 hours and although it has a plethora of flaws, it is enough to convey my knowledge and coding practices. Keep in mind the goal of this was to get as much done as quickly as possible while keeping the app "lightweight" and easy to understand. 
+
+The client is separate from the service which acts as the API between the database. I used create-react-app in the interest of time but that is far less than ideal in situations other than ones constrained by time. This is my first hands on attempt at creating secure network communication from scratch.
+
 ## Installation
 ### Tools Needed
 1. [node.js](https://nodejs.org/en/download/)
